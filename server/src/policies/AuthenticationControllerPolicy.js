@@ -8,9 +8,7 @@ module.exports = {
         new RegExp('^[a-zA_Z0-9]{8,32}')
       )
     }
-
     const {error, value} = Joi.validate(req.body, schema)
-
     if (error) {
       switch (error.details[0].context.key) {
         case 'email':
@@ -28,7 +26,6 @@ module.exports = {
             `
           })
           break
-
       }
     } else {
       next()
